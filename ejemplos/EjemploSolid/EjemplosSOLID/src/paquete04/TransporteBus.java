@@ -13,6 +13,11 @@ public class TransporteBus extends Transporte {
 
     private String cooperativaBus;
 
+    public TransporteBus(String cooperativaBus) {
+        this.cooperativaBus = cooperativaBus;
+        establecerTarifa();
+    }
+
     public void establecerCooperativaBus(String n) {
         cooperativaBus = n;
     }

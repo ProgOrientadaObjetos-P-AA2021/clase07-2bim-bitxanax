@@ -14,9 +14,13 @@ import java.util.ArrayList;
  */
 public class TiposTransporte {
     private double promedioTarifas;
-    private ArrayList<Transporte> transportes; // puedo tener muchos tipos de Transporte
-    
-    
+    private ArrayList<Transporte> transportes;
+
+    public TiposTransporte() {
+        this.promedioTarifas = 0;
+        this.transportes = new ArrayList<>();
+    }
+
     public void establecerTransportes(ArrayList<Transporte> t){
         transportes = t;
     }
@@ -26,14 +30,22 @@ public class TiposTransporte {
     }
     
     public void establecerPromedioTarifas(){
-        double suma = 0;
-        for (int i = 0; i < obtenerTransportes().size(); i++) {
-            suma = suma + obtenerTransportes().get(i).obtenerTarifa();
+        for (Transporte transporte : transportes){
+            promedioTarifas += transporte.obtenerTarifa();
         }
-        promedioTarifas = suma / obtenerTransportes().size();
-        
+        promedioTarifas /= transportes.size();
     }
-    
+
+    public void addTransporte(Transporte e){
+        this.transportes.add(e);
+        establecerPromedioTarifas();
+    }
+
+    public void addTransportes(ArrayList<Transporte> e){
+        this.transportes.addAll(e);
+        establecerPromedioTarifas();
+    }
+
     public double obtenerPromedioTarifas(){
         return promedioTarifas;
     }

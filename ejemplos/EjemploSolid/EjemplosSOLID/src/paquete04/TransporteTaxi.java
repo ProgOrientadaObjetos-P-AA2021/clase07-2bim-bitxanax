@@ -6,26 +6,29 @@
 package paquete04;
 
 /**
- *
  * @author reroes
  */
 public class TransporteTaxi extends Transporte {
     private String cooperativaTaxi;
-    
-    
-    public void establecerCooperativaTaxi(String n){
+
+    public TransporteTaxi(String cooperativaTaxi) {
+        this.cooperativaTaxi = cooperativaTaxi;
+        establecerTarifa();
+    }
+
+    public void establecerCooperativaTaxi(String n) {
         cooperativaTaxi = n;
     }
-    
-    
-    public void establecerTarifa(){
-        tarifa = 0.40 + (0.40*0.5);
+
+
+    public void establecerTarifa() {
+        tarifa = 0.40 + (0.40 * 0.5);
     }
-    
-    
-    public String obtenerCooperativaTaxi(){
+
+
+    public String obtenerCooperativaTaxi() {
         return cooperativaTaxi;
     }
-        
-    
+
+
 }
