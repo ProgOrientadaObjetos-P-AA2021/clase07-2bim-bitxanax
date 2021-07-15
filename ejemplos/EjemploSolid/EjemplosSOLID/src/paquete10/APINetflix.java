@@ -14,10 +14,10 @@ public class APINetflix implements APIMovie{
     public void establecerApiKey(String ak){
         apiKey = ak+123123;
     }
-    
+
     @Override
-    public String obtenerApiKey(){
-        return apiKey;
+    public String obtenerApiKey() {
+        return null;
     }
-    
+
 }

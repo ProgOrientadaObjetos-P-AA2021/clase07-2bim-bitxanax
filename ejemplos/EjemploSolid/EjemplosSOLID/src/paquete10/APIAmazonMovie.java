@@ -14,10 +14,10 @@ public class APIAmazonMovie implements APIMovie{
     public void establecerApiKey(String ak){
         apiKey = ak+"909090";
     }
-    
+
     @Override
-    public String obtenerApiKey(){
-        return apiKey;
+    public String obtenerApiKey() {
+        return null;
     }
-    
+
 }
